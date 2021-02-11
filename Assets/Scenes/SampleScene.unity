@@ -5392,6 +5392,7 @@ MonoBehaviour:
   velocidade: 2
   rb: {fileID: 1258825469}
   vida: 5
+  bandeiraAnimator: {fileID: 1131501051}
 --- !u!60 &1258825468
 PolygonCollider2D:
   m_ObjectHideFlags: 0
