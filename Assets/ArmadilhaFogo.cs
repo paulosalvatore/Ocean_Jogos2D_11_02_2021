@@ -16,6 +16,8 @@ public class ArmadilhaFogo : MonoBehaviour
 
     void Start()
     {
+        AtualizarEstadoArmadilha();
+
         InvokeRepeating("AlternarEstadoArmadilha", delayInicial, delay);
     }
 
@@ -23,6 +25,11 @@ public class ArmadilhaFogo : MonoBehaviour
     {
         ligado = !ligado;
 
+        AtualizarEstadoArmadilha();
+    }
+
+    void AtualizarEstadoArmadilha()
+    {
         armadilhaDesligada.SetActive(!ligado);
 
         armadilhaLigada.SetActive(ligado);

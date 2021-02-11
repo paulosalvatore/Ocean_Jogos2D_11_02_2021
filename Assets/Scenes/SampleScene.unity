@@ -8445,6 +8445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a55d6df38de1464f9d8d7552fde70c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armadilhaDesligada: {fileID: 1890043566}
+  armadilhaLigada: {fileID: 1423348560}
+  ligado: 1
+  delayInicial: 3
+  delay: 5
 --- !u!4 &2129539807
 Transform:
   m_ObjectHideFlags: 0
