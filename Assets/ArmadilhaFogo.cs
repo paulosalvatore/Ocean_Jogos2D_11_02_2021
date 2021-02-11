@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ArmadilhaFogo : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject armadilhaDesligada;
+
+    public GameObject armadilhaLigada;
+
+    public bool ligado;
+
+    public float delayInicial;
+
+    public float delay;
+
     void Start()
     {
-        
+        InvokeRepeating("AlternarEstadoArmadilha", delayInicial, delay);
     }
 
-    // Update is called once per frame
-    void Update()
+    void AlternarEstadoArmadilha()
     {
-        
+        ligado = !ligado;
+
+        armadilhaDesligada.SetActive(!ligado);
+
+        armadilhaLigada.SetActive(ligado);
     }
 }
