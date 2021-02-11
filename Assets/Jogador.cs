@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jogador : MonoBehaviour
 {
@@ -12,13 +13,8 @@ public class Jogador : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    public int vida = 5;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         var h = Input.GetAxis("Horizontal") * velocidade;
@@ -56,6 +52,19 @@ public class Jogador : MonoBehaviour
         if (caixaColidindo == other.gameObject)
         {
             caixaColidindo = null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Inimigo"))
+        {
+            vida--;
+
+            if (vida <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 }
