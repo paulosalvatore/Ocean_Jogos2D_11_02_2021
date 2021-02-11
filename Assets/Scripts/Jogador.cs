@@ -15,6 +15,8 @@ public class Jogador : MonoBehaviour
 
     public int vida = 5;
 
+    public Animator bandeiraAnimator;
+
     void Update()
     {
         var h = Input.GetAxis("Horizontal") * velocidade;
@@ -65,6 +67,10 @@ public class Jogador : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+        }
+        else if (other.CompareTag("Vitória"))
+        {
+            bandeiraAnimator.SetTrigger("Ativar");
         }
     }
 }
