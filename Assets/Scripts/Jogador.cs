@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Jogador : MonoBehaviour
 {
@@ -17,7 +18,14 @@ public class Jogador : MonoBehaviour
 
     public Animator bandeiraAnimator;
 
-    void Update()
+    public Text vidasText;
+
+    private void Start()
+    {
+        vidasText.text = $"Vidas: {vida}";
+    }
+
+    private void Update()
     {
         var h = Input.GetAxis("Horizontal") * velocidade;
         var v = Input.GetAxis("Vertical") * velocidade;
@@ -62,6 +70,8 @@ public class Jogador : MonoBehaviour
         if (other.CompareTag("Inimigo"))
         {
             vida--;
+
+            vidasText.text = $"Vidas: {vida}";
 
             if (vida <= 0)
             {
