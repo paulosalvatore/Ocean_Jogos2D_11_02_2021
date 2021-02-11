@@ -21,8 +21,8 @@ public class Jogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var h = Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
-        var v = Input.GetAxis("Vertical") * velocidade * Time.deltaTime;
+        var h = Input.GetAxis("Horizontal") * velocidade;
+        var v = Input.GetAxis("Vertical") * velocidade;
 
         rb.velocity = new Vector3(h, v, 0);
 
