@@ -10,6 +10,8 @@ public class Jogador : MonoBehaviour
 
     GameObject caixaArrastando;
 
+    public Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,7 @@ public class Jogador : MonoBehaviour
         var h = Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
         var v = Input.GetAxis("Vertical") * velocidade * Time.deltaTime;
 
-        transform.Translate(
-            h,
-            v,
-            0
-        );
+        rb.velocity = new Vector3(h, v, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
