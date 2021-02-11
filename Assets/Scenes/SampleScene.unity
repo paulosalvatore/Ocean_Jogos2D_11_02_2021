@@ -5554,7 +5554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9967ae7fae07d649b223bc47b46a5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 2
+  velocidade: 1.2
   rb: {fileID: 1258825469}
   vida: 5
   bandeiraAnimator: {fileID: 1131501051}

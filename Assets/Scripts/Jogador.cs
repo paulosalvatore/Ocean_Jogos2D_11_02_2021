@@ -27,8 +27,8 @@ public class Jogador : MonoBehaviour
 
     private void Update()
     {
-        var h = Input.GetAxis("Horizontal") * velocidade;
-        var v = Input.GetAxis("Vertical") * velocidade;
+        var h = Input.GetAxisRaw("Horizontal") * velocidade;
+        var v = Input.GetAxisRaw("Vertical") * velocidade;
 
         rb.velocity = new Vector3(h, v, 0);
 
